@@ -1,1 +1,90 @@
 *{box-sizing:border-box}body{margin:0;background:#11151d;color:#e8edf4;font-family:Inter,system-ui,sans-serif}main{max-width:1400px;margin:auto;padding:32px 44px}header{display:flex;justify-content:space-between;border-bottom:1px solid #2c3440;padding-bottom:24px}.eyebrow{font-size:11px;letter-spacing:.17em;color:#8a9cac}h1{font-size:28px;margin:10px 0 7px;color:#fff}p{color:#93a1b1}.badge{padding:10px 14px;border:1px solid #4e5d84;background:#1c2238;color:#a9bbff;border-radius:5px;font-size:12px}nav{display:flex;gap:8px;margin:22px 0}button,select,input{background:#1a222d;border:1px solid #3a4656;color:#dce5ed;padding:10px 13px;border-radius:5px;cursor:pointer}button.active,button:hover{background:#667cf4;border-color:#667cf4;color:#fff}.toolbar{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}.toolbar label{font-size:12px;color:#8fa1b1;display:flex;gap:12px;align-items:center}.planStatus{padding:9px 13px;border-radius:5px;font-size:12px}.planStatus.ready{background:#17372e;color:#73e0b0}.planStatus.blocked{background:#43242d;color:#ff9fa8}.grid{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}.panel{background:#171e28;border:1px solid #2d3743;border-radius:8px;padding:19px;min-height:320px}.panelHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.panelHead span{font-size:12px;color:#8494a5}h2{font-size:16px;margin:0}.slice{display:grid;grid-template-columns:repeat(32,1fr);width:min(620px,100%);aspect-ratio:1;background:#090d12;margin:auto}.slice span{min-width:0}.doseLegend{text-align:center;color:#8e9baa;font-size:12px;margin-top:14px}.doseLegend span{display:inline-block;width:12px;height:12px;margin:0 5px 0 16px;vertical-align:-2px}.kv{display:flex;justify-content:space-between;border-bottom:1px solid #29333f;padding:12px 0;color:#8998a8}.kv b{color:#f1f5fb}.callout,.recommend{background:#202b38;padding:14px;border-left:3px solid #687cf0;color:#aebccc;font-size:13px;line-height:1.6;margin-top:20px}.constraint{display:grid;grid-template-columns:1fr auto 70px;gap:14px;align-items:center;border-bottom:1px solid #29333f;padding:14px 0}.constraint small{display:block;color:#8596a6;margin-top:5px}.constraint strong{font-size:19px}.constraint .pass{color:#70ddb0}.constraint .fail{color:#ff858f}.constraint>span{font-size:11px;color:#8ca0b0}.bar{display:grid;grid-template-columns:115px 1fr 55px;gap:10px;align-items:center;margin:17px 0;font-size:12px;color:#a3b1c0}.bar div{height:10px;background:#283441;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#556cf4,#ec596b)}.review{display:flex;gap:8px;margin-top:28px}.review input{flex:1}.compareGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.compareCard{border:1px solid #344150;padding:18px;border-radius:7px;cursor:pointer}.compareCard.selected{border-color:#7387ff;background:#1d2638}.compareCard strong{font-size:30px;display:block;color:#7c91ff;margin:14px 0 2px}.compareCard small{color:#93a2b3}.compareCard p{font-size:12px}.tinyPass,.tinyFail{font-size:12px;padding:7px 0;color:#75d7aa}.tinyFail{color:#ff8791}@media(max-width:900px){main{padding:22px}.grid{grid-template-columns:1fr}header{display:block}.badge{display:inline-block;margin-top:14px}.compareGrid{grid-template-columns:1fr}}
+
+/* ============ 计划放行档案 ============ */
+.navIcon{margin-right:6px;opacity:.85}
+.planStatus.status-approved{background:#17372e;color:#73e0b0}
+.planStatus.status-review{background:#1c2238;color:#a9bbff}
+.planStatus.status-draft{background:#2d2818;color:#e8c86a}
+.dossier{display:flex;flex-direction:column;gap:16px}
+.dossierLoading{min-height:180px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;color:#93a1b1}
+.gateBanner{display:flex;justify-content:space-between;align-items:center;gap:24px;border:1px solid #2d3743;border-radius:8px;padding:20px 22px;background:#171e28}
+.gateBanner h2{font-size:18px;margin-bottom:6px}
+.gateBanner p{margin:0;font-size:13px;line-height:1.6}
+.gateBanner.ready{border-color:#2f7d5c;background:#15291f}
+.gateBanner.ready h2{color:#73e0b0}
+.gateBanner.released{border-color:#2f7d5c;background:#122a22}
+.gateBanner.released h2{color:#5fd39d}
+.gateBanner.blocked{border-color:#8a3944;background:#2a161c}
+.gateBanner.blocked h2{color:#ff909b}
+.gateStats{display:flex;gap:18px;flex-shrink:0}
+.gateStats span{font-size:12px;color:#93a1b1;white-space:nowrap}
+.gateStats b{font-size:19px;color:#eef3fa;margin:0 3px}
+.attemptBox{border-radius:8px;padding:14px 18px;font-size:13px;border:1px solid}
+.attemptBox strong{display:block;margin-bottom:4px;font-size:14px}
+.attemptBox>span{color:#8fa1b1;font-size:12px}
+.attemptBox p{margin:8px 0 0;color:#c2cedb}
+.attemptBox ul{margin:8px 0 0;padding-left:20px;line-height:1.8;color:#ffc2c8}
+.attemptBox ul em{color:#d9a1a8;font-style:normal}
+.attemptBox.ok{background:#15291f;border-color:#2f7d5c;color:#8fe4bb}
+.attemptBox.fail{background:#2a161c;border-color:#8a3944;color:#ffb4bc}
+.dossierGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.emptyState{border:1px dashed #3a4656;border-radius:6px;padding:18px;text-align:center;color:#8494a5;font-size:13px;margin-top:10px}
+.okState{color:#73e0b0;border-color:#2f7d5c;background:#13221b}
+.dangerState{color:#ff9fa8;border-color:#8a3944;background:#24141a}
+.blockerCard{border:1px solid #8a3944;background:#24141a;border-radius:7px;padding:13px 15px;margin-top:12px}
+.blockerHead{display:flex;align-items:center;gap:10px}
+.blockerHead strong{font-size:13px;color:#ffd7db}
+.blockerTag{font-size:11px;padding:3px 8px;border-radius:4px;background:#7c2f3c;color:#ffd7db;white-space:nowrap}
+.blockerTag.danger{background:#a32b3c}
+.blockerCard ul{margin:9px 0 0;padding-left:19px;color:#e5aab0;font-size:12.5px;line-height:1.8}
+.chipPass,.chipFail,.chipWarn{font-size:11px;padding:4px 9px;border-radius:4px;text-align:center}
+.chipPass{background:#17372e;color:#73e0b0}
+.chipFail{background:#43242d;color:#ff9fa8}
+.chipWarn{background:#3d341b;color:#e8c86a}
+.qaRow{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #29333f;padding:12px 0}
+.qaRow b{font-size:13.5px;margin-right:8px}
+.qaRow small{display:block;color:#8596a6;margin-top:4px;font-size:12px}
+.qaRow.status-fail b{color:#ff858f}
+.superseded{font-size:11px;color:#7d8a99;font-style:normal;border:1px solid #3a4656;border-radius:4px;padding:1px 6px;margin-left:6px}
+.inlineForm{display:flex;flex-wrap:wrap;gap:9px;align-items:flex-end;margin-top:16px;padding-top:14px;border-top:1px solid #29333f}
+.inlineForm label{font-size:11px;color:#8fa1b1;display:flex;flex-direction:column;gap:5px}
+.inlineForm input,.inlineForm select{min-width:96px;padding:8px 10px}
+.formHint{flex-basis:100%;color:#748293;font-size:11.5px}
+.formError{color:#ff9fa8;font-size:12px;margin-top:8px}
+.reviewerRow{margin-bottom:6px}
+.reviewerRow input{width:100%}
+.checkRow{display:flex;align-items:flex-start;gap:11px;padding:11px 4px;border-bottom:1px solid #29333f;cursor:pointer}
+.checkRow input{width:16px;height:16px;margin-top:2px;accent-color:#667cf4}
+.checkRow span{display:flex;flex-direction:column;gap:3px}
+.checkRow b{font-size:13.5px;font-weight:500}
+.checkRow small{color:#8596a6;font-size:11.5px}
+.checkRow.checked b{color:#73e0b0}
+.saving{color:#a9bbff}
+.fractionRow{display:grid;grid-template-columns:auto auto 1fr auto;gap:12px;align-items:center;border-bottom:1px solid #29333f;padding:11px 0;font-size:13px}
+.fractionRow small{color:#8596a6;font-size:11.5px}
+.fractionRow b{color:#dce5ed}
+.fractionForm input{min-width:64px}
+.deviationCard{border:1px solid #8a3944;background:#24141a;border-radius:7px;padding:13px 15px;margin-top:12px}
+.deviationCard p{margin:8px 0 4px;color:#e5aab0;font-size:12.5px;line-height:1.6}
+.deviationCard small{color:#9a8188;font-size:11.5px}
+.resolveBtn{margin-top:11px;background:#3a2b1b;border-color:#7a5a2e;color:#e8c86a;font-size:12px;padding:8px 12px}
+.resolveBtn:hover{background:#7a5a2e;border-color:#7a5a2e;color:#fff}
+.riskGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.riskCard{background:#1d2634;border:1px solid #2d3a4a;border-radius:7px;padding:16px;text-align:center}
+.riskCard b{display:block;font-size:24px;color:#a9bbff;margin-bottom:7px}
+.riskCard span{font-size:12.5px;color:#d0dbe7;display:block}
+.riskCard small{font-size:11px;color:#7d8a99;display:block;margin-top:5px}
+.riskCard.riskHigh{border-color:#8a3944;background:#2a161c}
+.riskCard.riskHigh b{color:#ff858f}
+.releasePanel{display:flex;flex-direction:column}
+.releaseNote{font-size:12.5px;color:#93a1b1;line-height:1.7;margin:0 0 16px}
+.releaseBtn{background:#2f7d5c;border-color:#3a9a70;color:#eafff5;font-size:15px;padding:14px;letter-spacing:.04em}
+.releaseBtn:hover:not(:disabled){background:#3a9a70;border-color:#3a9a70}
+.releaseBtn:disabled{background:#202833;border-color:#2d3743;color:#6b7a89;cursor:not-allowed}
+.auditRow{display:grid;grid-template-columns:120px 150px 1fr;gap:10px;align-items:baseline;border-bottom:1px solid #29333f;padding:10px 0;font-size:12.5px}
+.auditAction{color:#dce5ed}
+.auditRow small{color:#8494a5;font-size:11.5px}
+.auditDetail{color:#7d8a99;font-style:normal;font-size:11.5px;word-break:break-all}
+.auditRow.auditRelease{background:#15291f;border-radius:6px;padding:10px 12px;margin:2px -12px;border-bottom:none}
+.auditRow.auditRelease .auditAction{color:#73e0b0;font-weight:700}
+@media(max-width:1000px){.dossierGrid{grid-template-columns:1fr}.gateBanner{flex-direction:column;align-items:flex-start}.gateStats{flex-wrap:wrap}.auditRow{grid-template-columns:1fr}.fractionRow{grid-template-columns:1fr 1fr}}
